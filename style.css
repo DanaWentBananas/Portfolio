@@ -1,0 +1,492 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* INDIVIDUAL LETTERS IN INTRO */
+p span{
+  display: inline-block;
+}
+
+html{
+  width: 100vw;
+}
+
+body{
+  width: 100vw;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgb(222,222,222) 0%, grey 50% ,rgb(3,3,3) 100%);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.mainContainer{
+  width: 100%;
+  height: 100%;
+}
+
+/* _________________________LOADING_________________________ */
+
+.loading{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: blue;
+  z-index: 444;
+}
+
+
+/* _________________________INTRO_________________________ */
+
+.landingPage{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  z-index: 333;
+}
+
+.landingPage P{
+  font-size: 17.3vw;
+  color: rgba(33,33,33,0.7);
+  position: absolute;
+  top: 100px;
+  left: -2000px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.introBtnContainer{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 50%;
+  left: 0;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-content: center;
+}
+
+
+/* INTRO BUTTON ANIMATION */
+.introBtn{
+  border: 0;
+  border-radius: 6px;
+  position: relative;
+  height: 50px;
+  width: 400px;
+  background: transparent;
+  color: black;
+  padding: 10px 20px;
+  letter-spacing: 3px;
+  overflow: hidden;
+  transition: transform 150ms ease-out 150ms,
+              top 150ms ease-in,
+              bottom 150ms ease-in,
+              color 7s ease-in,
+              box-shadow 0.5s ease-in,
+              width 4s ease,
+              background-color 0.5s ease;
+}
+
+.introBtnShow{
+  width: 100px;
+  color: grey;
+}
+
+.introBtn:hover {
+  background-color: silver;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #bec6c9,
+              0 0 25px #bec6c9,
+              0 0 50px #bec6c9,
+              0 0 100px #bec6c9;
+}
+
+.introBtn span{
+  position: absolute;
+  display: block;
+}
+
+.introBtn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #bec6c9);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.introBtn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #bec6c9);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.introBtn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #bec6c9);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.introBtn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #bec6c9);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+
+/* ______________________END OF INTRO_____________________ */
+
+/* __________________________NAV_________________________ */
+
+
+/* NAV BAR */
+.nav{
+  top: 0;
+  position: fixed;
+  z-index: 33;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 60px;
+  background: rgba(0,0,0,0.7);
+}
+
+/* LOGO */
+.logo{
+  color: white;
+  letter-spacing: 3px;
+  padding-right: 33px;
+}
+
+/* NAV MENU */
+.nav ul{
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+/* NAV ITEMS */
+.nav ul li{
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+/* NAV LINKS */
+.nav ul li a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+.nav ul li a:hover{
+  color: grey;
+}
+
+/* HAMBURGER MENU */
+.hamburger-btn{
+  z-index: 4;
+  float: right;
+  display: block;
+  border: none;
+  background: transparent;
+  color: #fff;
+  height: calc(60px - 0.7rem);
+  width: calc(60px - 0.7rem);
+  margin: 0.3rem 0.3rem 0 0;
+  padding: 0;
+  position: relative;
+}
+.line {
+  height: 2.5px;
+  width: calc(60px - 2rem);
+  background: white;
+  display: block;
+  position: absolute;
+  left: calc(0.5rem - 1px);
+  transition: transform 150ms ease-in,
+  top 150ms ease-out 150ms,
+  bottom 150ms ease-out 150ms,
+  opacity 150ms ease 75ms;
+}
+.line:first-child{
+  top: 0.75rem;
+}
+.line:last-child{
+  bottom: 0.75rem;
+}
+/* AFTER CLICK */
+.cross .line{
+  transition: transform 150ms ease-out 150ms,
+              top 150ms ease-in,
+              bottom 150ms ease-in,
+              opacity 150ms ease 75ms;
+}
+.cross .line:first-child{
+  transform: rotate(45deg);
+  top: 23px;
+}
+.cross .line:nth-child(2){
+  opacity: 0;
+}
+.cross .line:last-child{
+  transform: rotate(-45deg);
+  bottom: 23px;
+}
+
+/* RESPONSIVE HAMBURGER */
+@media screen and (min-width:560px) {
+  .hamburger-btn{
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 560px){
+  .nav ul{
+    display: block;
+  }
+  .listContainer{
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    width: 70vw;
+    background:  rgba(0,0,0,0.7);
+    border-bottom-left-radius: 5px;
+    transition: right 1.3s ease-out;
+  }
+
+  .slide{
+    right: 0;
+  }
+  
+}
+
+/* __________________________END OF NAV_________________________ */
+
+/* ________________________PAGE SECTIONS _____________________*/
+
+/* SECTION */
+section{
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  border-width: 5px;
+  border-color: grey;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* SECTION HEADER */
+section h1{
+  font-size: 4rem;
+}
+
+section p{
+  font-size: 20px;
+  font-weight: 900;
+}
+
+/* SECTION BREAKERS */
+.breaker{
+  height: 5px;
+  background: black;
+  width: 0;
+}
+
+/* ______________________END OF ALL SECTIONS _____________________*/
+
+/* _______________________CONTACT SECTION _____________________*/
+
+#contact h1{
+  position: absolute;
+  top: 60px;
+}
+
+#contact h1::before{
+  content: "";
+  position: absolute;
+  left: 5%;
+  top: 60px;
+  width: 90%;
+  height: 5px;
+  margin: 30px auto;
+  background-color:grey;
+}
+
+.formContainer input,textarea{
+  background: transparent;
+}
+
+.formContainer{
+  background: transparent;
+  border-radius: 10px;
+  width:500px;
+  padding:2em;
+}
+
+.formPart{
+  margin-bottom:1.5em;
+  transition:all .3s;
+}
+
+.form-control{
+  box-shadow:none;
+  border-radius:0;
+  border-color:#ccc;
+  border-style:none none solid none;
+  width:100%;
+  font-size:1.25em;
+  transition:all .6s;
+}
+.form-control::placeholder{
+  color:#aaa;
+}
+.form-control:focus{
+  box-shadow:none;
+  border-color:var(--font-hover-color);
+  outline:none;
+}
+.formPart:focus-within{
+  transform:scale(1.1,1.1);
+}
+
+.form-control:invalid:focus{
+  border-color:red;
+}
+.form-control:valid:focus{
+  border-color:green;
+}
+
+.formSend{
+  background: 0 0 #fff;
+  border:1px solid #aaa;
+  border-radius:3px;
+  color:var(--font-color);
+  font-size:1em;
+  padding:10 50px;
+  text-transform:uppercase;
+}
+.formSend:hover{
+  border-color:var(--font-hover-color);
+  color:var(--font-hover-color);
+}
+textarea{
+  resize:none;
+}
+
+
+/* ____________________END OF CONTACT SECTION _____________________*/
+
+/* ________________________SKILLS SECTION _____________________*/
+
+.skillBreaker{
+  width: 100vw;
+  height: 50px;
+}
+/* RESPONSIVE SKILL SECTION */
+
+@media screen and (min-width:870px) {
+
+  
+.skillsContainer{
+  width: 100%;
+  height: 100%;
+}
+ 
+.skillLevel{
+  text-align: center;
+  display: table-cell;
+}
+
+.skills{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 50px;
+}
+
+/* Skill lines */
+.lineContainer{
+  left: 20px;
+  top: 20px;
+  width:400px;
+  height: 30px;
+  background: rgba(0,0,0,0.3);
+  position: relative;
+  border-radius: 5px;
+}
+
+.skillLine{
+  width: 0;
+  height: 90%;
+  background-color: white;
+  position: absolute;
+  left: 0.5%;
+  top: 5%;
+  border-radius: 2px 5px 5px 2px;
+  -webkit-box-shadow: 0px 0px 50px -5px rgba(255,255,255,1);
+-moz-box-shadow: 0px 0px 50px -5px rgba(255,255,255,1);
+box-shadow: 0px 0px 50px -5px rgba(255,255,255,1);
+}
+
+  
+}
+/* ____________________END OF SKILLS SECTION _____________________*/
+
+
