@@ -199,7 +199,7 @@
       <h1>CONTACT ME</h1>
 
        <div class="formContainer">
-        <form action="contactForm.php" method="POST" class="form">
+        <form action="POST" data-netlify="true">
             <div class="formPart">
                 <input type="text" class="form-control" id="name" name="name" placeholder="Your name?" tabindex="1" required>
             </div>
@@ -211,6 +211,9 @@
             </div>
             <div class="formPart">
                 <textarea class="form-control" rows="5" cols="50" id="message" name="message" placeholder="Send me whatever you want here..." tabindex="4"></textarea>
+            </div>
+            <div class="verifyContainer">
+              <div data-netlify-recaptcha="true"></div>
             </div>
             <div>
                 <button type="submit" class="formSend">Send Message!</button>
